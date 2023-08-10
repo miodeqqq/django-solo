@@ -2,10 +2,10 @@ from django.conf import settings
 from django.db import models
 
 try:
-    from django.core.cache import caches
-    get_cache = lambda cache_name: caches[cache_name]
+    from django.core.cache import cache
+    get_cache = lambda cache_name: cache[cache_name]
 except ImportError:
-    from django.core.cache import get_cache
+    from django.core.cache import cache as get_cache
 
 from solo import settings as solo_settings
 
